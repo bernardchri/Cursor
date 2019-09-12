@@ -72,8 +72,8 @@ class Cursor {
 		this.calcDelta()
 
 		// document.querySelector('html, a, button').style.cursor = 'none';
-		document.addEventListener('mousemove', (event) => { this.cursorAnim(event); }, true );
-		document.addEventListener('scroll', (event) => { this.pageScrollPos(event); }, true );
+		document.addEventListener('mousemove', (event) => { this.cursorAnim(event) }, true );
+		document.addEventListener('scroll', (event) => { this.pageScrollPos(event) }, true );
 		document.addEventListener('click', (event) => { this.mouseClicEvents(event)}, true);
 	}
 
@@ -83,8 +83,8 @@ class Cursor {
 s
 	resetCursor() {
 		this.cursor.remove();
-		document.removeEventListener('mousemove', (event) => { this.cursorAnim(event); }, true );
-		document.removeEventListener('scroll', (event) => { this.pageScrollPos(event); }, true );
+		document.removeEventListener('mousemove', (event) => { this.cursorAnim(event) }, true );
+		document.removeEventListener('scroll', (event) => { this.pageScrollPos(event) }, true );
 		document.removeEventListener('click', (event) => { this.mouseClicEvents(event)}, true);
 	}
 
