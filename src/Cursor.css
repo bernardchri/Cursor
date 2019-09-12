@@ -1,52 +1,4 @@
-body {
-  background: #F2F2F2;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #555C60;
-  /* cursor: none; */
-}
-
-button {
-  padding: 10px;
-  border-radius: 50px;
-  margin: 10px;
-}
-
-button:hover {
-  border-color: #D0DEE5;
-}
-
-a {
-  color: #00BFFF;
-}
-
-.superBouton {
-  padding: 20px;
-  margin: 10px;
-  background: #e5007e;
-  display: inline-block;
-  color: white;
-  border-radius: 5px;
-}
-
-a .superBouton:hover,
-a .zoneNormale:hover {
-  -webkit-box-shadow: 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
-          box-shadow: 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
-}
-
-.zoneNormale {
-  padding: 20px;
-  margin: 10px;
-  background: #D0DEE5;
-  display: block;
-}
-
-.content__text {
-  width: 768px;
-  margin: auto;
-}
-
-.cursor__wrapper {
+.mouse__cursor {
   position: absolute;
   display: block;
   height: 80px;
@@ -64,13 +16,15 @@ a .zoneNormale:hover {
   z-index: 10000000000;
 }
 
-.cursor__pointer {
+.mouse__cursor .mouse {
   background-color: #e5007e;
   width: 8px;
   height: 8px;
 }
 
-.cursor__pointer, .cursor__int, .cursor__ext {
+.mouse__cursor .mouse,
+.mouse__cursor .int,
+.mouse__cursor .ext {
   position: absolute;
   display: block;
   content: ' ';
@@ -82,13 +36,14 @@ a .zoneNormale:hover {
   transition: transform 250ms ease, -webkit-transform 250ms ease;
 }
 
-.cursor__int, .cursor__ext {
+.mouse__cursor .int,
+.mouse__cursor .ext {
   border-color: #e5007e;
   width: 0px;
   height: 0px;
 }
 
-.cursor--click .cursor__pointer {
+.mouse__cursor.click .mouse {
   -webkit-transform: scale(0.4);
           transform: scale(0.4);
   -webkit-transition: -webkit-transform 250ms ease;
@@ -97,7 +52,7 @@ a .zoneNormale:hover {
   transition: transform 250ms ease, -webkit-transform 250ms ease;
 }
 
-.cursor--click .cursor__int {
+.mouse__cursor.click .int {
   width: 50px;
   height: 50px;
   opacity: 0;
@@ -106,7 +61,7 @@ a .zoneNormale:hover {
   border: 1px solid #e5007e;
 }
 
-.cursor--click .cursor__ext {
+.mouse__cursor.click .ext {
   width: 60px;
   height: 60px;
   -webkit-transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
@@ -115,21 +70,11 @@ a .zoneNormale:hover {
   border: 1px solid #e5007e;
 }
 
-.cursor--link .cursor__pointer {
+.mouse__cursor.link .mouse {
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   mix-blend-mode: normal;
 }
-
-.cursor--link .cursor__ext {
-  width: 30px;
-  height: 30px;
-  opacity: 1;
-}
-
-.cursor--hidden {
-  display: none;
-}
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=Cursor.css.map */
