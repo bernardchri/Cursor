@@ -1,0 +1,91 @@
+// ----------------------
+// MOUSE CURSOR
+// -- cb
+// -- cf Cursor.js
+
+
+@include m1100 {
+	html, 
+	a, 
+	button {
+	  cursor: none !important;
+	}
+}
+
+
+.mouse__cursor{
+  position: absolute;
+  display: block;
+  height:80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10000000000;
+  
+  & .mouse{
+    background-color: #e5007e;
+    width: 8px;
+    height: 8px;
+   
+  }
+  
+
+  & .mouse,
+  & .int,
+  & .ext{
+    position: absolute;
+    display: block;
+    content: ' ';
+    border-radius: 50%;
+    pointer-events: none;
+     transition: transform 250ms ease;
+  }
+  
+  .int,
+  .ext{
+    border-color:#e5007e;
+    width: 0px;
+    height: 0px;
+  }
+  
+  
+  // au clic
+  &.click{
+    
+     .mouse{
+      transform: scale(0.4);
+      transition: transform 250ms ease;
+    }
+   
+    .int{
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
+      border: 1px solid #e5007e;
+    }
+     .ext{
+      width: 60px;
+      height: 60px;
+      transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
+      opacity: 0;
+      border: 1px solid #e5007e;
+    }
+   
+  }
+  
+  //au rollOver
+  &.link{
+     .mouse{
+      transition: all 250ms ease;
+      width: 20px;
+      height: 20px;
+      mix-blend-mode: normal;
+      
+    }
+  }
+
+  
+}

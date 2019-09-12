@@ -1,0 +1,127 @@
+body {
+  background: #F2F2F2;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #555C60;
+}
+
+button {
+  padding: 10px;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+button:hover {
+  border-color: #D0DEE5;
+}
+
+a {
+  color: #00BFFF;
+}
+
+.superBouton {
+  padding: 20px;
+  margin: 10px;
+  background: #e5007e;
+  display: inline-block;
+  color: white;
+  border-radius: 5px;
+}
+
+a .superBouton:hover,
+a .zoneNormale:hover {
+  -webkit-box-shadow: 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
+          box-shadow: 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
+}
+
+.zoneNormale {
+  padding: 20px;
+  margin: 10px;
+  background: #D0DEE5;
+  display: block;
+}
+
+.content__text {
+  width: 768px;
+  margin: auto;
+}
+
+.mouse__cursor {
+  position: absolute;
+  display: block;
+  height: 80px;
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  pointer-events: none;
+  z-index: 10000000000;
+}
+
+.mouse__cursor .mouse {
+  background-color: #e5007e;
+  width: 8px;
+  height: 8px;
+}
+
+.mouse__cursor .mouse,
+.mouse__cursor .int,
+.mouse__cursor .ext {
+  position: absolute;
+  display: block;
+  content: ' ';
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 250ms ease;
+  transition: -webkit-transform 250ms ease;
+  transition: transform 250ms ease;
+  transition: transform 250ms ease, -webkit-transform 250ms ease;
+}
+
+.mouse__cursor .int,
+.mouse__cursor .ext {
+  border-color: #e5007e;
+  width: 0px;
+  height: 0px;
+}
+
+.mouse__cursor.click .mouse {
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+  -webkit-transition: -webkit-transform 250ms ease;
+  transition: -webkit-transform 250ms ease;
+  transition: transform 250ms ease;
+  transition: transform 250ms ease, -webkit-transform 250ms ease;
+}
+
+.mouse__cursor.click .int {
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  -webkit-transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
+  transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
+  border: 1px solid #e5007e;
+}
+
+.mouse__cursor.click .ext {
+  width: 60px;
+  height: 60px;
+  -webkit-transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
+  transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
+  opacity: 0;
+  border: 1px solid #e5007e;
+}
+
+.mouse__cursor.link .mouse {
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  width: 20px;
+  height: 20px;
+  mix-blend-mode: normal;
+}
+/*# sourceMappingURL=style.css.map */

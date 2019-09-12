@@ -1,0 +1,23 @@
+{
+  "name": "cursor-custom",
+  "version": "1.0.0",
+  "description": "## Description Create custom cursor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardchri/Cursor.git"
+  },
+  "keywords": [
+    "cursor",
+    "custom"
+  ],
+  "author": "bergall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernardchri/Cursor/issues"
+  },
+  "homepage": "https://github.com/bernardchri/Cursor#readme"
+}
