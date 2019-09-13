@@ -67,7 +67,6 @@ class Cursor {
 			document.documentElement.style.cursor = "none"
 		}
 		else{
-			
 			document.documentElement.style.cursor = "auto"
 		}
 
