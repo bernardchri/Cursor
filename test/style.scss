@@ -1,145 +1,51 @@
+
 body{
-  background: #F2F2F2;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #555C60;
-}
-
-
-button{
-  padding:10px;
-  border-radius: 50px;
-  margin:10px;
-  &:hover{
-    border-color: #D0DEE5;
-  }
-}
-a{
-  color: #00BFFF;
-}
-
-.superBouton{
-  padding: 20px;
-  margin: 10px;
-  background: #e5007e;
-  display: inline-block;
-  color: white;
-  border-radius: 5px;
-}
-
-a .superBouton:hover, 
-a .zoneNormale:hover{
-  box-shadow : 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
-}
-
-.zoneNormale{
-  padding: 20px;
-  margin: 10px;
-  background: #D0DEE5;
-  display: block;
-}
-
-  // content
-  .content{
-    &__text{
-      width: 768px;
-      margin: auto;
-    }
-  }
-
-
-// html{
-//   position: absolute;
-//   top: 50px;
-// }
-
-
-// ----------------------
-// MOUSE CURSOR
-// -- cb
-// -- cf Cursor.js
-
-.cursor{
-  &__wrapper{
-  position: absolute;
-  display: block;
-  height:80px;
-  width: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 10000000000;
-  }
-
-  &__pointer{
-    background-color: #e5007e;
-    width: 8px;
-    height: 8px;
-  }
-  
-
-  &__pointer,
-  &__int,
-  &__ext{
-    position: absolute;
-    display: block;
-    content: ' ';
-    border-radius: 50%;
-    pointer-events: none;
-     transition: transform 250ms ease;
-  }
-  
-  &__int,
-  &__ext{
-    border-color:#e5007e;
-    width: 0px;
-    height: 0px;
+	background: #F2F2F2;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #555C60;
   }
   
   
-  // au clic
-  &--click{
-    
-    .cursor__pointer{
-      transform: scale(0.4);
-      transition: transform 250ms ease;
-    }
-   
-    .cursor__int{
-      width: 50px;
-      height: 50px;
-      opacity: 0;
-      transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
-      border: 1px solid #e5007e;
-    }
-    .cursor__ext{
-      width: 60px;
-      height: 60px;
-      transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
-      opacity: 0;
-      border: 1px solid #e5007e;
-    }
-   
+  button{
+	padding:10px;
+	border-radius: 50px;
+	margin:10px;
+	&:hover{
+	  border-color: #D0DEE5;
+	}
+  }
+  a{
+	color: #00BFFF;
   }
   
-  //au rollOver
-  &--link{
-     .cursor__pointer{
-      transition: all 250ms ease;
-      width: 22px;
-      height: 22px;
-      mix-blend-mode: normal;
-    }
-    .cursor__ext{
-      width: 30px;
-      height: 30px;
-      opacity: 1;
-      // border: 1px solid #e5007e;
-    }
+  .superBouton{
+	padding: 20px;
+	margin: 10px;
+	background: #e5007e;
+	display: inline-block;
+	color: white;
+	border-radius: 5px;
   }
-  // iframe
-  &--hidden{
-    display: none;
+  
+  a .superBouton:hover, 
+  a .zoneNormale:hover{
+	box-shadow : 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
   }
-}
-
+  
+  .zoneNormale{
+	padding: 20px;
+	margin: 10px;
+	background: #D0DEE5;
+	display: block;
+  }
+  
+	// content
+	.content{
+	  &__text{
+		width: 768px;
+		margin: auto;
+	  }
+	}
+  
+  
+@import "../src/Cursor.scss";

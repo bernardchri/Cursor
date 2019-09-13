@@ -1,5 +1,10 @@
 /**
-### Gestion du custom cursor
+	### Gestion du custom cursor
+	- const cursor = new Cursor({
+		minWidth: '1024px',
+		pointer: "hidden",
+		framerate: 33
+	});
   - Un wrapper général avec la class '.cursor__wrapper'
   - Au clic le wrapper prend une class '.cursor--click'
   - Au rollOver le wrapper prend une class '.cursor--link'
@@ -154,12 +159,3 @@ s
 	}
 }
 
-// const cursor = new Cursor({
-	
-// })
-
-const cursor02 = new Cursor({
-	minWidth: '1024px',
-	pointer: "hidden",
-	framerate: 33
-});

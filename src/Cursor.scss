@@ -1,11 +1,10 @@
 // ----------------------
 // MOUSE CURSOR
-// -- cb
+// -- bernarchri
 // -- cf Cursor.js
 
-
-
-.mouse__cursor{
+.cursor{
+  &__wrapper{
   position: absolute;
   display: block;
   height:80px;
@@ -15,18 +14,18 @@
   justify-content: center;
   pointer-events: none;
   z-index: 10000000000;
-  
-  & .mouse{
+  }
+
+  &__pointer{
     background-color: #e5007e;
     width: 8px;
     height: 8px;
-   
   }
   
 
-  & .mouse,
-  & .int,
-  & .ext{
+  &__pointer,
+  &__int,
+  &__ext{
     position: absolute;
     display: block;
     content: ' ';
@@ -35,8 +34,8 @@
      transition: transform 250ms ease;
   }
   
-  .int,
-  .ext{
+  &__int,
+  &__ext{
     border-color:#e5007e;
     width: 0px;
     height: 0px;
@@ -44,21 +43,21 @@
   
   
   // au clic
-  &.click{
+  &--click{
     
-     .mouse{
+    .cursor__pointer{
       transform: scale(0.4);
       transition: transform 250ms ease;
     }
    
-    .int{
+    .cursor__int{
       width: 50px;
       height: 50px;
       opacity: 0;
       transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
       border: 1px solid #e5007e;
     }
-     .ext{
+    .cursor__ext{
       width: 60px;
       height: 60px;
       transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
@@ -69,15 +68,23 @@
   }
   
   //au rollOver
-  &.link{
-     .mouse{
+  &--link{
+     .cursor__pointer{
       transition: all 250ms ease;
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       mix-blend-mode: normal;
-      
+    }
+    .cursor__ext{
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+      // border: 1px solid #e5007e;
     }
   }
-
-  
+  // iframe
+  &--hidden{
+    display: none;
+  }
 }
+

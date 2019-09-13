@@ -1,4 +1,4 @@
-.mouse__cursor {
+.cursor__wrapper {
   position: absolute;
   display: block;
   height: 80px;
@@ -16,15 +16,13 @@
   z-index: 10000000000;
 }
 
-.mouse__cursor .mouse {
+.cursor__pointer {
   background-color: #e5007e;
   width: 8px;
   height: 8px;
 }
 
-.mouse__cursor .mouse,
-.mouse__cursor .int,
-.mouse__cursor .ext {
+.cursor__pointer, .cursor__int, .cursor__ext {
   position: absolute;
   display: block;
   content: ' ';
@@ -36,14 +34,13 @@
   transition: transform 250ms ease, -webkit-transform 250ms ease;
 }
 
-.mouse__cursor .int,
-.mouse__cursor .ext {
+.cursor__int, .cursor__ext {
   border-color: #e5007e;
   width: 0px;
   height: 0px;
 }
 
-.mouse__cursor.click .mouse {
+.cursor--click .cursor__pointer {
   -webkit-transform: scale(0.4);
           transform: scale(0.4);
   -webkit-transition: -webkit-transform 250ms ease;
@@ -52,7 +49,7 @@
   transition: transform 250ms ease, -webkit-transform 250ms ease;
 }
 
-.mouse__cursor.click .int {
+.cursor--click .cursor__int {
   width: 50px;
   height: 50px;
   opacity: 0;
@@ -61,7 +58,7 @@
   border: 1px solid #e5007e;
 }
 
-.mouse__cursor.click .ext {
+.cursor--click .cursor__ext {
   width: 60px;
   height: 60px;
   -webkit-transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
@@ -70,11 +67,21 @@
   border: 1px solid #e5007e;
 }
 
-.mouse__cursor.link .mouse {
+.cursor--link .cursor__pointer {
   -webkit-transition: all 250ms ease;
   transition: all 250ms ease;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   mix-blend-mode: normal;
+}
+
+.cursor--link .cursor__ext {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+}
+
+.cursor--hidden {
+  display: none;
 }
 /*# sourceMappingURL=Cursor.css.map */
