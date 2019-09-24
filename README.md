@@ -22,3 +22,13 @@ Create custom cursor
 - **pointer** : defaut "auto" sinon mettre "hidden" pour cacher le curseur par défaut
 - **framerate** : par défaut 10 
 - **colorDefault** : "#e5007e
+
+
+## Notes
+- **iframes** : Au survol des iFrame, le curseur disparait ( eviter des conflits sur les iframes comme Youtube)
+- **optimisation** : un canvas serait sans doute plus performant, mais la gestion des états se fera moins facilement qu'en css
+- **animation**: les animations se font actuellement via des changements de class css. Pour des choses plus complexes on pourrait utiliser Lottie ?
+
+
+## TO DO;
+- Ajouter une class ".cusor--slide" : pour les blocs ou le comportement sera un slide.
