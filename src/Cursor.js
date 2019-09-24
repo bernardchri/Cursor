@@ -11,7 +11,7 @@
   - **data-cursor-color="#ffffff"** ou n'importe quel couleur hexadécimale
   - **data-cursor-hover** pour forcer l'effet du hover
 */
-class Cursor {
+var Cursor = class Cursor {
 	constructor({ minWidth = '1024px', delta, framerate = 10, colorDefault="#e5007e", pointer = "auto"}) {
 		//responsive
 		this.framerate = framerate;
@@ -84,7 +84,7 @@ class Cursor {
 	insertMarkup() {
 		document.body.insertAdjacentHTML('beforeend', this.markup);
 	}
-s
+
 	resetCursor() {
 		this.cursor.remove();
 		document.removeEventListener('mousemove', (event) => { this.cursorAnim(event) }, true );
@@ -154,7 +154,6 @@ s
 			this.cursor.classList.remove('cursor--click');
 			clearTimeout(timer);
 		}, 300);
-
 	}
 }
 

@@ -10,7 +10,7 @@ Create custom cursor
 - `<a data-cursor-color="#ffffff">mon lien special </a>`Forcer un changement de couleur du curseur **data-cursor-color="#ffffff"** ou n'importe quel couleur hexadécimale
 - `<div data-cursor-hover>mon div à survoler </div>` : **data-cursor-hover** pour forcer l'effet du hover 
 
-Créer un nouveau curseur : 
+## Créer un nouveau curseur : 
 	
 	const cursor = new Cursor({
 		minWidth: '1280px',

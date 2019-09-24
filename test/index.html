@@ -6,10 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
-	<!-- <link rel="stylesheet" href="../src/Cursor.css"> -->
-	<script defer src="../src/Cursor.js"></script>
+	<link rel="stylesheet" href="../src/Cursor.css">
 
 </head>
+<style>
+	html{
+		margin-top: 32px !important; /* test simulation connection à un bo comme Wordpress */
+	}
+</style>
 <body>
 	<h1>Custom Cursor pointer</h1>
 	<h3>vanillia js</h3>
@@ -59,4 +63,13 @@
 	</div>
 	
 </body>
+<script  src="../src/Cursor.js"></script>
+<script>
+	const cursor = new Cursor({
+		minWidth: '1280px',
+		pointer: "hidden",
+		framerate: 60
+	});
+</script>
+
 </html>
