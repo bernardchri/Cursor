@@ -3,22 +3,25 @@
 	- const cursor = new Cursor({
 		minWidth: '1024px',
 		pointer: "hidden",
-		framerate: 33
+		framerate: 33,
+		ignore: '.bouton'
 	});
   - Un wrapper général avec la class '.cursor__wrapper'
   - Au clic le wrapper prend une class '.cursor--click'
   - Au rollOver le wrapper prend une class '.cursor--link'
   - **data-cursor-color="#ffffff"** ou n'importe quel couleur hexadécimale
   - **data-cursor-hover** pour forcer l'effet du hover
+-
 */
-var Cursor = class Cursor {
-	constructor({ minWidth = '1024px', delta, framerate = 10, colorDefault="#e5007e", pointer = "auto"}) {
+export class Cursor {
+	constructor({ minWidth = '1024px', delta, framerate = 10, colorDefault="#e5007e", pointer = "auto", ignore=[]}) {
 		//responsive
 		this.framerate = framerate;
 		this.colorDefault = colorDefault;
 		this.minWidth = minWidth;
 		this.mq = window.matchMedia(`screen and (min-width:${this.minWidth})`);
 		this.pointer = pointer;
+		this.ignore = ignore
 
 		
 		// 
@@ -61,13 +64,39 @@ var Cursor = class Cursor {
 		this.cursor = document.querySelector('.cursor__wrapper');
 
 		// reset style
-		console.log(this.pointer)
+		// console.log(this.pointer)
+		// Enlève tous les style pointer sur tous les éléments
+
+		let elementsPointerDefault = [
+			'a',
+			'button', 
+			...this.ignore
+		]
+		
+		console.log(elementsPointerDefault)
 
 		if(this.pointer == "hidden"){
-			document.documentElement.style.cursor = "none"
+			// global
+			document.documentElement.style.setProperty('cursor',"none",'important');
+			// ciblé
+			elementsPointerDefault.forEach(el => {
+				console.log(document.querySelector(el))
+				document.querySelectorAll(el).forEach(item=>{
+					item.style.setProperty('cursor',"none",'important');
+				})
+			})
 		}
 		else{
-			document.documentElement.style.cursor = "auto"
+			// global
+			document.documentElement.style.setProperty('cursor',"none",'important');
+			// ciblé
+			elementsPointerDefault.forEach(el => {
+				console.log(document.querySelector(el))
+				document.querySelectorAll(el).forEach(item=>{
+					item.style.setProperty('cursor',"auto",'important');
+				})
+				
+			})
 		}
 
 		//reset cursor
@@ -131,6 +160,7 @@ var Cursor = class Cursor {
 			// si ceux sont des liens
 			if (liens) {
 				this.cursor.classList.add('cursor--link');
+				
 			} else {
 				this.cursor.classList.remove('cursor--link');
 			}

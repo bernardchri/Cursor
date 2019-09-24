@@ -5,14 +5,149 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="../src/Cursor.css">
+	<link rel="stylesheet" href="./src/Cursor.css">
 
 </head>
 <style>
 	html{
 		margin-top: 32px !important; /* test simulation connection à un bo comme Wordpress */
 	}
+
+	body {
+  background: #F2F2F2;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #555C60;
+	}
+
+	button {
+	padding: 10px;
+	border-radius: 50px;
+	margin: 10px;
+	}
+
+	button:hover {
+	border-color: #D0DEE5;
+	}
+
+	a {
+	color: #00BFFF;
+	}
+
+	.superBouton {
+	padding: 20px;
+	margin: 10px;
+	background: #e5007e;
+	display: inline-block;
+	color: white;
+	border-radius: 5px;
+	}
+
+	a .superBouton:hover,
+	a .zoneNormale:hover {
+	-webkit-box-shadow: 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
+			box-shadow: 0 0 1px 1px white inset, 0 0 0px 0px #D0DEE5;
+	}
+
+	.zoneNormale {
+	padding: 20px;
+	margin: 10px;
+	background: #D0DEE5;
+	display: block;
+	}
+
+	.content__text {
+	width: 768px;
+	margin: auto;
+	}
+
+	.cursor__wrapper {
+	position: absolute;
+	display: block;
+	height: 80px;
+	width: 80px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+		-ms-flex-align: center;
+			align-items: center;
+	-webkit-box-pack: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+	pointer-events: none;
+	z-index: 10000000000;
+	}
+
+	.cursor__pointer {
+	background-color: #e5007e;
+	width: 8px;
+	height: 8px;
+	}
+
+	.cursor__pointer, .cursor__int, .cursor__ext {
+	position: absolute;
+	display: block;
+	content: ' ';
+	border-radius: 50%;
+	pointer-events: none;
+	-webkit-transition: -webkit-transform 250ms ease;
+	transition: -webkit-transform 250ms ease;
+	transition: transform 250ms ease;
+	transition: transform 250ms ease, -webkit-transform 250ms ease;
+	}
+
+	.cursor__int, .cursor__ext {
+	border-color: #e5007e;
+	width: 0px;
+	height: 0px;
+	}
+
+	.cursor--click .cursor__pointer {
+	-webkit-transform: scale(0.4);
+			transform: scale(0.4);
+	-webkit-transition: -webkit-transform 250ms ease;
+	transition: -webkit-transform 250ms ease;
+	transition: transform 250ms ease;
+	transition: transform 250ms ease, -webkit-transform 250ms ease;
+	}
+
+	.cursor--click .cursor__int {
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+	-webkit-transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
+	transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
+	border: 1px solid #e5007e;
+	}
+
+	.cursor--click .cursor__ext {
+	width: 60px;
+	height: 60px;
+	-webkit-transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
+	transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
+	opacity: 0;
+	border: 1px solid #e5007e;
+	}
+
+	.cursor--link .cursor__pointer {
+	-webkit-transition: all 250ms ease;
+	transition: all 250ms ease;
+	width: 22px;
+	height: 22px;
+	mix-blend-mode: normal;
+	}
+
+	.cursor--link .cursor__ext {
+	width: 30px;
+	height: 30px;
+	opacity: 1;
+	}
+
+	.cursor--hidden {
+	display: none;
+	}
+	/*# sourceMappingURL=style.css.map */
+
 </style>
 <body>
 	<h1>Custom Cursor pointer</h1>
@@ -63,13 +198,6 @@
 	</div>
 	
 </body>
-<script  src="../src/Cursor.js"></script>
-<script>
-	const cursor = new Cursor({
-		minWidth: '1280px',
-		pointer: "hidden",
-		framerate: 60
-	});
-</script>
+<script type="module" src="./index.js"></script>
 
 </html>

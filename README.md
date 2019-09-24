@@ -22,6 +22,7 @@ Create custom cursor
 - **pointer** : defaut "auto" sinon mettre "hidden" pour cacher le curseur par défaut
 - **framerate** : par défaut 10 
 - **colorDefault** : "#e5007e
+- **ignore** : Pour forcer des éléments dont le comportement ajoute un curseur pointer, par défaut le script inclu déjà les balises a et button
 
 
 ## Notes
