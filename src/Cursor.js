@@ -73,14 +73,11 @@ export class Cursor {
 			...this.ignore
 		]
 		
-		console.log(elementsPointerDefault)
-
 		if(this.pointer == "hidden"){
 			// global
 			document.documentElement.style.setProperty('cursor',"none",'important');
 			// ciblé
 			elementsPointerDefault.forEach(el => {
-				console.log(document.querySelector(el))
 				document.querySelectorAll(el).forEach(item=>{
 					item.style.setProperty('cursor',"none",'important');
 				})
@@ -91,7 +88,6 @@ export class Cursor {
 			document.documentElement.style.setProperty('cursor',"none",'important');
 			// ciblé
 			elementsPointerDefault.forEach(el => {
-				console.log(document.querySelector(el))
 				document.querySelectorAll(el).forEach(item=>{
 					item.style.setProperty('cursor',"auto",'important');
 				})
