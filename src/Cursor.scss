@@ -4,8 +4,10 @@
 // -- cf Cursor.js
 
 .cursor{
+  position: fixed;
+
   &__wrapper{
-  position: absolute;
+  // position: absolute;
   display: block;
   height:80px;
   width: 80px;

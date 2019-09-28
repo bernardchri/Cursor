@@ -127,6 +127,8 @@ export class Cursor {
 		this.cursorDatas.mouseY = this.cursorDatas.mouseY - (oldPageY - this.cursorDatas.pageY);
 		this.cursorDatas.mouseX = this.cursorDatas.mouseX - (oldPageX - this.cursorDatas.pageX);
 
+		// console.log(this.cursorDatas)
+
 		this.transformDatasToCursorPosition();
 	}
 
@@ -183,3 +185,4 @@ export class Cursor {
 	}
 }
 
+export const Cusor2 = 'toto'
