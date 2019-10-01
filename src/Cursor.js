@@ -62,7 +62,7 @@ export class Cursor {
 		// window.onload = this.insertMarkup();
 		this.insertMarkup();
 		this.cursor = document.querySelector('.cursor__wrapper');
-
+		this.cursor.style.position = "fixed"
 		// reset style
 		// console.log(this.pointer)
 		// Enlève tous les style pointer sur tous les éléments
@@ -76,6 +76,7 @@ export class Cursor {
 		if(this.pointer == "hidden"){
 			// global
 			document.documentElement.style.setProperty('cursor',"none",'important');
+
 			// ciblé
 			elementsPointerDefault.forEach(el => {
 				document.querySelectorAll(el).forEach(item=>{
@@ -184,5 +185,3 @@ export class Cursor {
 		}, 300);
 	}
 }
-
-export const Cusor2 = 'toto'
