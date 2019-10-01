@@ -62,7 +62,6 @@ export class Cursor {
 		// window.onload = this.insertMarkup();
 		this.insertMarkup();
 		this.cursor = document.querySelector('.cursor__wrapper');
-		this.cursor.style.position = "fixed"
 		// reset style
 		// console.log(this.pointer)
 		// Enlève tous les style pointer sur tous les éléments
@@ -99,12 +98,13 @@ export class Cursor {
 		//reset cursor
 		this.cursor.style.left = 0;
 		this.cursor.style.top = 0;
+		this.cursor.style.position = "fixed"
+
 		this.calcDelta()
 
-		// document.querySelector('html, a, button').style.cursor = 'none';
 		document.addEventListener('mousemove', (event) => { this.cursorAnim(event) }, true );
-		document.addEventListener('scroll', (event) => { this.pageScrollPos(event) }, true );
-		document.addEventListener('click', (event) => { this.mouseClicEvents(event)}, true);
+		document.documentElement.onclick = (event) => { this.mouseClicEvents(event)};
+
 	}
 
 	insertMarkup() {
@@ -114,42 +114,23 @@ export class Cursor {
 	resetCursor() {
 		this.cursor.remove();
 		document.removeEventListener('mousemove', (event) => { this.cursorAnim(event) }, true );
-		document.removeEventListener('scroll', (event) => { this.pageScrollPos(event) }, true );
-		document.removeEventListener('click', (event) => { this.mouseClicEvents(event)}, true);
 	}
 
-	pageScrollPos() {
-		const oldPageX = this.cursorDatas.pageX;
-		const oldPageY = this.cursorDatas.pageY;
-
-		this.cursorDatas.pageX = window.pageXOffset || window.scrollX;
-		this.cursorDatas.pageY = window.pageYOffset || window.scrollY;
-
-		this.cursorDatas.mouseY = this.cursorDatas.mouseY - (oldPageY - this.cursorDatas.pageY);
-		this.cursorDatas.mouseX = this.cursorDatas.mouseX - (oldPageX - this.cursorDatas.pageX);
-
-		// console.log(this.cursorDatas)
-
-		this.transformDatasToCursorPosition();
-	}
 
 	cursorAnim(event) {
-		this.cursorDatas.mouseX = event.pageX;
-		this.cursorDatas.mouseY = event.pageY;
-		this.transformDatasToCursorPosition();
+		this.cursorDatas.mouseX = event.clientX;
+		this.cursorDatas.mouseY = event.clientY;
 
-		// check les elements survolés
-		this.mouseOverEvents(event)
-	}
-
-	transformDatasToCursorPosition() {
 		let posX = this.cursorDatas.mouseX + this.delta;
 		let posY = this.cursorDatas.mouseY + this.delta;
 
 		setTimeout( () => {
-			this.cursor.style.transform = `translate( ${posX}px, ${posY}px  ) `;
+			this.cursor.style.left = `${posX}px`;
+			this.cursor.style.top = `${posY}px`;
 		}, this.framerate)
-		
+
+		// check les elements survolés
+		this.mouseOverEvents(event)
 	}
 
 	mouseOverEvents(event) {
@@ -179,6 +160,7 @@ export class Cursor {
 
 	mouseClicEvents() {
 		this.cursor.classList.add('cursor--click');
+		
 		let timer = setTimeout(() => {
 			this.cursor.classList.remove('cursor--click');
 			clearTimeout(timer);

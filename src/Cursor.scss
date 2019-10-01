@@ -4,10 +4,10 @@
 // -- cf Cursor.js
 
 .cursor{
-  position: fixed;
+  
 
   &__wrapper{
-  // position: absolute;
+  // outline: 1px solid;
   display: block;
   height:80px;
   width: 80px;
@@ -28,7 +28,7 @@
   &__pointer,
   &__int,
   &__ext{
-    position: absolute;
+    position: fixed;
     display: block;
     content: ' ';
     border-radius: 50%;

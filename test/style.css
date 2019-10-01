@@ -45,8 +45,12 @@ a .zoneNormale:hover {
   margin: auto;
 }
 
+.cursor {
+  position: fixed;
+  outline: 1px solid;
+}
+
 .cursor__wrapper {
-  position: absolute;
   display: block;
   height: 80px;
   width: 80px;
@@ -70,7 +74,7 @@ a .zoneNormale:hover {
 }
 
 .cursor__pointer, .cursor__int, .cursor__ext {
-  position: absolute;
+  position: fixed;
   display: block;
   content: ' ';
   border-radius: 50%;

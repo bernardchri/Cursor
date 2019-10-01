@@ -6,8 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<link rel="stylesheet" href="./src/Cursor.css">
-	
-
 
 </head>
 <style>
@@ -62,93 +60,6 @@
 	margin: auto;
 	}
 
-	.cursor__wrapper {
-	position: absolute;
-	display: block;
-	height: 80px;
-	width: 80px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-		-ms-flex-align: center;
-			align-items: center;
-	-webkit-box-pack: center;
-		-ms-flex-pack: center;
-			justify-content: center;
-	pointer-events: none;
-	z-index: 10000000000;
-	}
-
-	.cursor__pointer {
-	background-color: #e5007e;
-	width: 8px;
-	height: 8px;
-	}
-
-	.cursor__pointer, .cursor__int, .cursor__ext {
-	position: absolute;
-	display: block;
-	content: ' ';
-	border-radius: 50%;
-	pointer-events: none;
-	-webkit-transition: -webkit-transform 250ms ease;
-	transition: -webkit-transform 250ms ease;
-	transition: transform 250ms ease;
-	transition: transform 250ms ease, -webkit-transform 250ms ease;
-	}
-
-	.cursor__int, .cursor__ext {
-	border-color: #e5007e;
-	width: 0px;
-	height: 0px;
-	}
-
-	.cursor--click .cursor__pointer {
-	-webkit-transform: scale(0.4);
-			transform: scale(0.4);
-	-webkit-transition: -webkit-transform 250ms ease;
-	transition: -webkit-transform 250ms ease;
-	transition: transform 250ms ease;
-	transition: transform 250ms ease, -webkit-transform 250ms ease;
-	}
-
-	.cursor--click .cursor__int {
-	width: 50px;
-	height: 50px;
-	opacity: 0;
-	-webkit-transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
-	transition: width 500ms ease 100ms, height 500ms ease 100ms, opacity 200ms ease-in 300ms;
-	border: 1px solid #e5007e;
-	}
-
-	.cursor--click .cursor__ext {
-	width: 60px;
-	height: 60px;
-	-webkit-transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
-	transition: width 500ms ease , height 500ms ease , opacity 200ms ease-in 100ms;
-	opacity: 0;
-	border: 1px solid #e5007e;
-	}
-
-	.cursor--link .cursor__pointer {
-	-webkit-transition: all 250ms ease;
-	transition: all 250ms ease;
-	width: 22px;
-	height: 22px;
-	mix-blend-mode: normal;
-	}
-
-	.cursor--link .cursor__ext {
-	width: 30px;
-	height: 30px;
-	opacity: 1;
-	}
-
-	.cursor--hidden {
-	display: none;
-	}
-	/*# sourceMappingURL=style.css.map */
 
 </style>
 <body>
@@ -201,8 +112,11 @@
 	
 </body>
 <script type="module">
-	import {Cursor} from './src/Cursor.js'
-	const cursor = new Cursor({})
+	import {Cursor} from './src/Cursor.js';
+
+	const cursor = new Cursor({
+		pointer: "auto",
+	})
 		
 	</script>
 
