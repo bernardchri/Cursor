@@ -71,29 +71,6 @@ export class Cursor {
 			'button', 
 			...this.ignore
 		]
-		
-		if(this.pointer == "hidden"){
-			// global
-			document.documentElement.style.setProperty('cursor',"none",'important');
-
-			// ciblé
-			elementsPointerDefault.forEach(el => {
-				document.querySelectorAll(el).forEach(item=>{
-					item.style.setProperty('cursor',"none",'important');
-				})
-			})
-		}
-		else{
-			// global
-			document.documentElement.style.setProperty('cursor',"none",'important');
-			// ciblé
-			elementsPointerDefault.forEach(el => {
-				document.querySelectorAll(el).forEach(item=>{
-					item.style.setProperty('cursor',"auto",'important');
-				})
-				
-			})
-		}
 
 		//reset cursor
 		this.cursor.style.left = 0;
@@ -105,6 +82,8 @@ export class Cursor {
 		document.addEventListener('mousemove', (event) => { this.cursorAnim(event) }, true );
 		document.documentElement.onclick = (event) => { this.mouseClicEvents(event)};
 
+		this.hiddenNativeCursor();
+
 	}
 
 	insertMarkup() {
@@ -114,8 +93,18 @@ export class Cursor {
 	resetCursor() {
 		this.cursor.remove();
 		document.removeEventListener('mousemove', (event) => { this.cursorAnim(event) }, true );
+		this.seeNativeCursor()
 	}
 
+	hiddenNativeCursor(){
+		if(this.pointer === "hidden"){
+			document.documentElement.classList.add ('cursor__hiddenForAll')
+		}
+	}
+
+	seeNativeCursor(){
+		document.documentElement.classList.remove('cursor__hiddenForAll')
+	}
 
 	cursorAnim(event) {
 		this.cursorDatas.mouseX = event.clientX;
@@ -146,12 +135,15 @@ export class Cursor {
 			}
 
 			//si data-cursor-color proche, on applique la couleur au curseur
-			if (event.target.closest('[data-cursor-color]')) {
-				const color = event.target.closest('[data-cursor-color]').dataset.cursorColor;
-				document.querySelector('.cursor__wrapper *').style.background = color;
-			} else {
-				document.querySelector('.cursor__wrapper *').style.background = this.colorDefault;
+			if(document.querySelector('.cursor__wrapper')){
+				if (event.target.closest('[data-cursor-color]')) {
+					const color = event.target.closest('[data-cursor-color]').dataset.cursorColor;
+					document.querySelector('.cursor__wrapper *').style.background = color;
+				} else {
+					document.querySelector('.cursor__wrapper *').style.background = this.colorDefault;
+				}
 			}
+			
 
 		// cas special des iframes
 		// sur une iframe, le curseur se détruit

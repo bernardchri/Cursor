@@ -45,9 +45,8 @@ a .zoneNormale:hover {
   margin: auto;
 }
 
-.cursor {
-  position: fixed;
-  outline: 1px solid;
+.cursor__hiddenForAll * {
+  cursor: none !important;
 }
 
 .cursor__wrapper {

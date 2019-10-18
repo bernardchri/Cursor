@@ -31,6 +31,7 @@
 
 	a {
 	color: #00BFFF;
+	cursor: pointer;
 	}
 
 	.superBouton {
@@ -103,7 +104,7 @@
 		Nunc ornare in erat vel condimentum. Praesent consectetur ac libero eu gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam id vulputate metus. Fusce faucibus eleifend mi sed feugiat. Nullam nec turpis sit amet ipsum porta lobortis. Aliquam nisi velit, porta varius consectetur sit amet, lobortis id nunc. Praesent semper nibh quis quam tempor commodo. Ut lacinia tortor in sem congue luctus. Nam sagittis pellentesque sem at cursus. Aenean in nibh ante. Pellentesque sodales, nisl vel egestas imperdiet, ligula urna lobortis dolor, eu venenatis libero magna condimentum nisi. Fusce commodo sapien nunc, in vehicula odio porttitor mollis.
 		</p>
 		<p>
-		Fusce id arcu feugiat, euismod purus eget, finibus dolor. Morbi interdum ac ipsum vehicula hendrerit. Sed ac accumsan ligula. Aenean pretium commodo felis ut luctus. Sed blandit diam eget sem interdum commodo. Aenean purus quam, consectetur vitae dui tincidunt, molestie pulvinar metus. Donec laoreet, magna sollicitudin malesuada porttitor, ipsum metus facilisis dui, at gravida sem dui a diam. Etiam sed dolor ac tellus sodales tempus. Aliquam neque arcu, rhoncus eget dui porta, eleifend ultricies quam. Praesent sit amet justo nec tortor sodales vestibulum id eu lectus. Pellentesque quis congue enim, vitae fringilla ligula. Mauris quis aliquet massa, quis mollis eros. Cras nec diam ipsum. Fusce id vehicula elit.
+		<a href="#">Fusce id arcu feugiat, euismod purus eget, </a>finibus dolor. Morbi interdum ac ipsum vehicula hendrerit. Sed ac accumsan ligula. Aenean pretium commodo felis ut luctus. Sed blandit diam eget sem interdum commodo. Aenean purus quam, consectetur vitae dui tincidunt, molestie pulvinar metus. Donec laoreet, magna sollicitudin malesuada porttitor, ipsum metus facilisis dui, at gravida sem dui a diam. Etiam sed dolor ac tellus sodales tempus. Aliquam neque arcu, rhoncus eget dui porta, eleifend ultricies quam. Praesent sit amet justo nec tortor sodales vestibulum id eu lectus. Pellentesque quis congue enim, vitae fringilla ligula. Mauris quis aliquet massa, quis mollis eros. Cras nec diam ipsum. Fusce id vehicula elit.
 		</p>
 		Mauris placerat maximus leo eu varius. Integer eu velit magna. Phasellus dignissim mollis tempor. Nullam consequat lorem eu odio varius tempus a in diam. Ut vitae nisl metus. Donec vestibulum ex nec mauris laoreet, eu dapibus urna porta. Sed molestie lobortis risus quis dapibus. Sed cursus congue diam vitae dignissim. Fusce eu orci mauris. In quam tellus, fermentum malesuada consequat interdum, sodales sed purus. Donec sodales leo in dolor auctor imperdiet. Nullam nec odio et ex maximus convallis eu at nibh. Cras faucibus pharetra sagittis. Mauris convallis ex eget ligula egestas, sed ultrices nunc mollis. Aenean velit ex, finibus et placerat in, vulputate nec est.
 		
@@ -115,7 +116,9 @@
 	import {Cursor} from './src/Cursor.js';
 
 	const cursor = new Cursor({
-		pointer: "auto",
+		minWidth: '1280px',
+		pointer: "hidden",
+		framerate: 10
 	})
 		
 	</script>

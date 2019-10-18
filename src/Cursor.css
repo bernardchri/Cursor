@@ -1,3 +1,7 @@
+.cursor__hiddenForAll * {
+  cursor: none !important;
+}
+
 .cursor__wrapper {
   display: block;
   height: 80px;

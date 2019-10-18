@@ -4,7 +4,13 @@
 // -- cf Cursor.js
 
 .cursor{
-  
+
+  &__hiddenForAll{
+    & * {
+      cursor: none!important;
+    }
+  }
+
 
   &__wrapper{
   // outline: 1px solid;
